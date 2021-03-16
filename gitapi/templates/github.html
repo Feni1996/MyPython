@@ -1,0 +1,9 @@
+<h2>Working with GIT API.</h2>
+<form method="GET">
+    <input type="text" name="username"></input>
+    <button type="submit">Search</button>
+
+    {% if user %}
+    <p><strong>{{user.name}}</strong> has <strong>{{user.public_repos}}</strong> public repository.</p>
+    {% endif %}
+</form>
