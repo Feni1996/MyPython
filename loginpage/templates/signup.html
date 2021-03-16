@@ -1,0 +1,12 @@
+<h1>SIGN UP PAGE</h1>
+<form method="POST">
+    {{ form1.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Signup" />
+</form>
+
+{{form1.errors}}
+
+{% for message in messages %}
+    <p id="messages">{{ message }}</p>
+{% endfor %}
