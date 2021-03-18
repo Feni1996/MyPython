@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body id='b1'>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<p>
+        
+</p>
+<form method="post">
+    {% csrf_token %}
+    <div class="card text-center">
+        <div class="card-header">
+            <h2>Delet the Blog Post</h2>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Are you sure you want to delete <strong>"{{ object }}"</strong> ?</h5>
+          <input type="submit" value="Submit" class="btn btn-primary"/>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">If you do not want to delete, you can go back.!</h5>
+            <a href="{% url "post_list" %}" class="btn btn-primary">Back</a>
+          </div>
+        <div class="card-footer text-muted">
+          delete page created by @feni Patel
+        </div>
+      </div>
+</form>
+</body>
+</html>
