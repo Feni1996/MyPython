@@ -19,7 +19,7 @@ def post_view(request, pk):
     post= get_object_or_404(Blog_post, pk=pk)
     return render(request, 'blogpost/post_detail.html', {'object':post})
 
-def post_create(request, template_name='books/book_form.html'):
+def post_create(request):
     form = BlogForm(request.POST or None)
     if form.is_valid():
         form.save()
@@ -34,7 +34,7 @@ def post_update(request, pk):
         return redirect('post_list')
     return render(request, 'blogpost/post_form.html', {'form':form})
 
-def post_delete(request, pk, template_name='books/book_confirm_delete.html'):
+def post_delete(request, pk):
     post = get_object_or_404(Blog_post, pk=pk)
     if request.method=='POST':
         post.delete()
